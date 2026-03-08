@@ -1,47 +1,24 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { Toaster } from 'react-hot-toast'
-import { AuthProvider, useAuth } from './contexts/AuthContext'
-import Login from './pages/Login'
-import Register from './pages/Register'
+import { AuthProvider } from './contexts/AuthContext'
 import Dashboard from './pages/Dashboard'
 import Editor from './pages/Editor'
 import View from './pages/View'
 
-const PrivateRoute = ({ children }) => {
-  const { user, loading } = useAuth()
-  if (loading) return (
-    <div className="min-h-screen bg-mystical flex items-center justify-center">
-      <div className="text-center">
-        <div className="spinner mx-auto mb-4" />
-        <p className="text-amber-400/70 text-sm">Carregando...</p>
-      </div>
-    </div>
-  )
-  return user ? children : <Navigate to="/login" replace />
-}
-
-const PublicOnlyRoute = ({ children }) => {
-  const { user, loading } = useAuth()
-  if (loading) return (
-    <div className="min-h-screen bg-mystical flex items-center justify-center">
-      <div className="spinner" />
-    </div>
-  )
-  return !user ? children : <Navigate to="/dashboard" replace />
-}
-
 function AppRoutes() {
   return (
     <Routes>
-      <Route path="/login" element={<PublicOnlyRoute><Login /></PublicOnlyRoute>} />
-      <Route path="/register" element={<PublicOnlyRoute><Register /></PublicOnlyRoute>} />
-      <Route path="/dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
-      <Route path="/editor" element={<PrivateRoute><Editor /></PrivateRoute>} />
-      <Route path="/editor/:id" element={<PrivateRoute><Editor /></PrivateRoute>} />
+      <Route path="/dashboard" element={<Dashboard />} />
+      <Route path="/editor" element={<Editor />} />
+      <Route path="/editor/:id" element={<Editor />} />
       <Route path="/m/:slug" element={<View />} />
-      <Route path="/" element={<Navigate to="/login" replace />} />
-      <Route path="*" element={<Navigate to="/login" replace />} />
+
+      {/* página inicial */}
+      <Route path="/" element={<Navigate to="/dashboard" replace />} />
+
+      {/* fallback */}
+      <Route path="*" element={<Navigate to="/dashboard" replace />} />
     </Routes>
   )
 }
