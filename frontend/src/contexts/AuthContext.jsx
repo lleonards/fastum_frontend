@@ -1,48 +1,28 @@
 import React, { createContext, useContext, useEffect, useState } from 'react'
-import { supabase } from '../lib/supabase'
 
 const AuthContext = createContext({})
 
 export const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(null)
-  const [loading, setLoading] = useState(true)
+  const [user, setUser] = useState({ id: "public-user" })
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
-    // Pega sessão atual
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      setUser(session?.user ?? null)
-      setLoading(false)
-    })
-
-    // Escuta mudanças de auth
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
-      setUser(session?.user ?? null)
-    })
-
-    return () => subscription.unsubscribe()
+    // Usuário público fixo (sem login)
+    setUser({ id: "public-user" })
+    setLoading(false)
   }, [])
 
-  const signUp = async (email, password, name) => {
-    const { data, error } = await supabase.auth.signUp({
-      email,
-      password,
-      options: {
-        data: { full_name: name }
-      }
-    })
-    return { data, error }
+  // Funções vazias para não quebrar o app
+  const signUp = async () => {
+    return { data: null, error: null }
   }
 
-  const signIn = async (email, password) => {
-    const { data, error } = await supabase.auth.signInWithPassword({
-      email,
-      password
-    })
-    return { data, error }
+  const signIn = async () => {
+    return { data: null, error: null }
   }
 
   const signOut = async () => {
-    await supabase.auth.signOut()
+    return
   }
 
   return (
