@@ -1,6 +1,0 @@
-User-agent: *
-Allow: /
-Disallow: /dashboard
-Disallow: /editor
-
-Sitemap: https://fastum-frontend.onrender.com/sitemap.xml
