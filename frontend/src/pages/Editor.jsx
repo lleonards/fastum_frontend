@@ -5,6 +5,7 @@ import { useAuth } from '../contexts/AuthContext'
 import { supabase } from '../lib/supabase'
 import toast from 'react-hot-toast'
 import { nanoid } from 'nanoid'
+import { getUserId } from "../utils/userId"
 
 // ====== CONSTANTS ======
 const THEMES = [
