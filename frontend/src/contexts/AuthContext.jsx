@@ -2,17 +2,17 @@ import React, { createContext, useContext, useEffect, useState } from 'react'
 
 const AuthContext = createContext({})
 
+const PUBLIC_USER_ID = "00000000-0000-0000-0000-000000000000"
+
 export const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState({ id: "public-user" })
+  const [user, setUser] = useState({ id: PUBLIC_USER_ID })
   const [loading, setLoading] = useState(false)
 
   useEffect(() => {
-    // Usuário público fixo (sem login)
-    setUser({ id: "public-user" })
+    setUser({ id: PUBLIC_USER_ID })
     setLoading(false)
   }, [])
 
-  // Funções vazias para não quebrar o app
   const signUp = async () => {
     return { data: null, error: null }
   }
