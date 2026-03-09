@@ -2,22 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.fastum.com/</loc>
-    <lastmod>2024-03-24</lastmod>
+    <lastmod>2026-03-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
-
   <url>
     <loc>https://www.fastum.com/login</loc>
-    <lastmod>2024-03-24</lastmod>
-    <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
-
   <url>
     <loc>https://www.fastum.com/register</loc>
-    <lastmod>2024-03-24</lastmod>
-    <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
 </urlset>
