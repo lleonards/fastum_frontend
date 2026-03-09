@@ -4,6 +4,18 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+
+  safelist: [
+    'design-roses',
+    'design-hearts',
+    'design-stars',
+    'design-leaves',
+    'design-waves',
+    'design-diamonds',
+    'design-butterflies',
+    'design-snowflakes'
+  ],
+
   theme: {
     extend: {
       fontFamily: {
@@ -26,6 +38,7 @@ export default {
         'josefin': ['"Josefin Sans"', 'sans-serif'],
         'montserrat': ['Montserrat', 'sans-serif'],
       },
+
       animation: {
         'unroll': 'unroll 1.5s ease-out forwards',
         'envelope-open': 'envelopeOpen 1s ease-out forwards',
@@ -38,40 +51,49 @@ export default {
         'slide-up': 'slideUp 0.8s ease-out forwards',
         'paper-appear': 'paperAppear 1s ease-out forwards',
       },
+
       keyframes: {
         unroll: {
           '0%': { transform: 'scaleY(0)', transformOrigin: 'top', opacity: '0' },
           '100%': { transform: 'scaleY(1)', transformOrigin: 'top', opacity: '1' }
         },
+
         envelopeOpen: {
           '0%': { transform: 'rotateX(0deg)' },
           '100%': { transform: 'rotateX(-180deg)' }
         },
+
         fadeIn: {
           '0%': { opacity: '0' },
           '100%': { opacity: '1' }
         },
+
         float: {
           '0%, 100%': { transform: 'translateY(0px)' },
           '50%': { transform: 'translateY(-10px)' }
         },
+
         sparkle: {
           '0%, 100%': { opacity: '1', transform: 'scale(1)' },
           '50%': { opacity: '0.5', transform: 'scale(1.2)' }
         },
+
         ribbonBounce: {
           '0%': { transform: 'scaleY(1)' },
           '50%': { transform: 'scaleY(0.8) scaleX(1.1)' },
           '100%': { transform: 'scaleY(0) scaleX(0)', opacity: '0' }
         },
+
         slideUp: {
           '0%': { transform: 'translateY(50px)', opacity: '0' },
           '100%': { transform: 'translateY(0)', opacity: '1' }
         },
+
         paperAppear: {
           '0%': { transform: 'translateY(100%) scaleY(0)', opacity: '0' },
           '100%': { transform: 'translateY(0) scaleY(1)', opacity: '1' }
         },
+
         giftOpen: {
           '0%': { transform: 'translateY(0) rotate(0deg)' },
           '30%': { transform: 'translateY(-5px) rotate(-5deg)' },
@@ -81,5 +103,6 @@ export default {
       }
     },
   },
+
   plugins: [],
 }
