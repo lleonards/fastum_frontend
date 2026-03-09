@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.fastum.com/</loc>
+    <loc>https://www.fastum.online/</loc>
     <lastmod>2026-03-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.fastum.com/login</loc>
+    <loc>https://www.fastum.online/login</loc>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.fastum.com/register</loc>
+    <loc>https://www.fastum.online/register</loc>
     <priority>0.5</priority>
   </url>
 </urlset>
